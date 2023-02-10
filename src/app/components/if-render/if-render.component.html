@@ -1,0 +1,6 @@
+<div class="class">
+    <div *ngIf="canShow">Estamos mostrando isso porque foi permitido!</div>
+    <h2 *ngIf="name === 'Victor'; else nameNotFound">O nome é Victor</h2>
+    <!-- bloco equivalente ao else, que captura a referencia ('TemplateRef') do else com # -->
+    <ng-template #nameNotFound>Nome não foi encontrado</ng-template>
+</div>
