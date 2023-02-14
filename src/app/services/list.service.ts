@@ -15,11 +15,11 @@ export class ListService {
     return this.http.get<Animal[]>(this.apiUrl);
   }
 
-  getOne(id: number) {
+  getOne(id: number): Observable<Animal> {
     return this.http.get<Animal>(`${this.apiUrl}/${id}`);
   }
 
-  remove(animals: Animal[], animal: Animal) : Animal[] {
-    return animals.filter(a => a.name !== animal.name);
+  remove(id: number): Observable<Animal> {
+    return this.http.delete<Animal>(`${this.apiUrl}/${id}`);
   }
 }
