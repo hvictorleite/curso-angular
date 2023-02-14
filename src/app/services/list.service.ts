@@ -15,6 +15,10 @@ export class ListService {
     return this.http.get<Animal[]>(this.apiUrl);
   }
 
+  getOne(id: number) {
+    return this.http.get<Animal>(`${this.apiUrl}/${id}`);
+  }
+
   remove(animals: Animal[], animal: Animal) : Animal[] {
     return animals.filter(a => a.name !== animal.name);
   }
